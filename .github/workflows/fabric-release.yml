@@ -36,7 +36,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build All Fabric Versions
-        run: ./gradlew :fabric:build
+        run: ./gradlew :fabric:1.21.11:build :fabric:1.21.10:build :fabric:1.21.9:build :fabric:1.21.8:build :fabric:1.21.5:build :fabric:1.21.4:build :fabric:1.21.1:build :fabric:1.20.1:build
 
       - name: Release
         uses: softprops/action-gh-release@v1
