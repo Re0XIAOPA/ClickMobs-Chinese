@@ -101,7 +101,7 @@ public class PickupHandler {
         ItemStack itemStack = Items.PLAYER_HEAD.getDefaultStack();
         writeCustomData(itemStack, nbt);
         formatItem(itemStack, name.copy().fillStyle(Style.EMPTY.withItalic(false).withColor(Formatting.YELLOW)),
-                List.of(Text.translatable("clickmobs.mob.lore", entityName)
+                List.of(Text.literal("右键点击以放回 " + entityName + "。")
                         .fillStyle(Style.EMPTY.withItalic(false).withColor(Formatting.DARK_GRAY)))
         );
         return itemStack;
@@ -183,7 +183,7 @@ public class PickupHandler {
         }
         Text name = entity.getType().getName();
         if (entity instanceof MobEntity mob && mob.isBaby()) {
-            return Text.translatable("clickmobs.baby_mob", name);
+            return Text.literal("幼年 ").append(name);
         }
         return name.copy();
     }
@@ -194,7 +194,7 @@ public class PickupHandler {
 
     public static void notifyPickup(PlayerEntity player, Entity entity) {
         Text name = entity.getType().getName();
-        MessageType.PICKUP_MESSAGE.sendActionbarSilently(player, Text.translatable("clickmobs.pick_up", name));
+        MessageType.PICKUP_MESSAGE.sendActionbarSilently(player, Text.literal("你捡起了 ").append(name));
         ServerWorld world = (ServerWorld) VersionHelper.getWorld(player);
         double x = entity.getX();
         double y = entity.getY() + .25f;

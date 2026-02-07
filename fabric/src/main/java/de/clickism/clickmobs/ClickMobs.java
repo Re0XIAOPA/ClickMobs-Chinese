@@ -53,16 +53,16 @@ public class ClickMobs implements ModInitializer {
                     .requires(VersionHelper::isOp)
                     .then(FabricCommandAdapter.ofConfig(CONFIG)
                             .add(new SetCommand((sender, key, value) -> {
-                                MessageType.CONFIG.send(sender, Text.translatable("clickmobs.config_set", key, value));
+                                MessageType.CONFIG.send(sender, Text.literal("§a配置项 \"§l" + key + "§a\" 已设置为 §l" + value + "。"));
                             }))
                             .add(new GetCommand((sender, key, value) -> {
-                                MessageType.CONFIG.send(sender, Text.translatable("clickmobs.config_get", key, value));
+                                MessageType.CONFIG.send(sender, Text.literal("§a配置项 \"§l" + key + "§a\" 的值为 §l" + value + "。"));
                             }))
                             .add(new ReloadCommand(sender -> {
-                                MessageType.CONFIG.send(sender, Text.translatable("clickmobs.config_reload"));
+                                MessageType.CONFIG.send(sender, Text.literal("§a配置文件已重载。"));
                             }))
                             .add(new PathCommand((sender, path) -> {
-                                MessageType.CONFIG.send(sender, Text.translatable("clickmobs.config_path", path));
+                                MessageType.CONFIG.send(sender, Text.literal("§a配置文件位于: §f" + path));
                             }))
                             .buildRoot()
                     )

@@ -38,6 +38,6 @@ public class UpdateNotifier implements ServerPlayConnectionEvents.Join {
         if (notifiedPlayers.contains(player.getUuid())) return;
         notifiedPlayers.add(player.getUuid());
         if (!VersionHelper.isOp(player)) return;
-        MessageType.WARN.send(player, Text.translatable("clickmobs.update", newerVersion));
+        MessageType.WARN.send(player, Text.literal("ClickMobs: 发现新版本: " + newerVersion));
     }
 }

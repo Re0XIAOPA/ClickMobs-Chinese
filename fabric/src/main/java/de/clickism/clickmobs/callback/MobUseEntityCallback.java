@@ -61,7 +61,7 @@ public class MobUseEntityCallback implements UseEntityCallback {
             return ActionResult.PASS;
         }
         if (!canBePickedUp(entity)) {
-            MessageType.FAIL.sendActionbar(player, Text.translatable("clickmobs.blacklisted_mob"));
+            MessageType.FAIL.sendActionbar(player, Text.literal("你不能捡起这个生物"));
             return ActionResult.PASS;
         }
         PickupHandler.notifyPickup(player, entity);
