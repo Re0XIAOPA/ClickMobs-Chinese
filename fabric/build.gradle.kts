@@ -23,10 +23,10 @@ dependencies {
 	modImplementation("net.fabricmc:fabric-loader:${property("deps.fabric_loader")}")
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${property("deps.fabric_api")}")
 	// Configured
-	implementation(include("de.clickism:configured-core:${configuredVersion}")!!)
-	implementation(include("de.clickism:configured-yaml:${configuredVersion}")!!)
-	implementation(include("de.clickism:configured-json:${configuredVersion}")!!)
-	implementation(include("de.clickism:configured-fabric-command-adapter:${configuredVersion}")!!)
+	modImplementation(include("de.clickism:configured-core:${configuredVersion}")!!)
+	modImplementation(include("de.clickism:configured-yaml:${configuredVersion}")!!)
+	modImplementation(include("de.clickism:configured-json:${configuredVersion}")!!)
+	modImplementation(include("de.clickism:configured-fabric-command-adapter:${configuredVersion}")!!)
 	// Configured Dependency
 	implementation(include("org.yaml:snakeyaml:2.0")!!)
 }
